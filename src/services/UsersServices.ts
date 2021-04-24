@@ -20,7 +20,7 @@ export class UsersServices {
             return userAlreadyExists;
         }
 
-        const user = this.usersRepository.create({
+        const user = await this.usersRepository.create({
             name,
             email,
         });

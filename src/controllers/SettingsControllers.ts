@@ -5,6 +5,7 @@ export class SettingsController {
 
     async create(request: Request, response: Response) {
         const { chat, username } = request.body;
+        console.log('Usuario no Controller: ' + username)
         const settingsService = new SettingsService();
 
         try {
@@ -23,6 +24,7 @@ export class SettingsController {
 
         const settingsService = new SettingsService();
 
+        console.log("Find by username SettingsController: " + username);
         const settings = await settingsService.findByUserName(username);
 
         return response.json(settings);

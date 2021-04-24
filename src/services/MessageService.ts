@@ -18,7 +18,7 @@ export class MessagesServices {
 
     async create({ admin_id, text, user_id }: IMessageCreate) {
 
-        const message = this.messageRepository.create({
+        const message = await this.messageRepository.create({
             admin_id,
             text,
             user_id
@@ -30,7 +30,6 @@ export class MessagesServices {
     }
 
     async listByUser(user_id: string) {
-
         const list = await this.messageRepository.find({
             where: { user_id },
             relations: ["user"],
