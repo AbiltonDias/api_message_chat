@@ -1,10 +1,19 @@
-*{
-  margin: 0;
- padding: 0;
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
-html{
-  width: 100vw;
-  height: 100vh;
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 *,
@@ -14,87 +23,13 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: top;
-  background-image:url(https://image.freepik.com/fotos-gratis/user-people-network-circuit-board-conexao-conexao-tecnologia_1379-882.jpg);
-  width: 100%;
-  height: 100%;
-  font-family: Arial, Helvetica;
-  letter-spacing: 0.02em;
-   font-weight: 400;
-  -webkit-font-smoothing: antialiased; 
-}
-
-.blurred-box{
-  position: relative;
-  width: 250px;
-  height: 350px;
-  top: calc(50% - 175px);
-  left: calc(50% - 125px);
-  background: inherit;
-  border-radius: 2px;
-  overflow: hidden;
-}.blurred-box:after{
-  content: '';
-  width: 300px;
-  height: 300px;
-  background: inherit; 
-  position: absolute;
-  left: -25px;
-  /* left: position; */
-  right: 0;
-  top: -25px;  
-  /* top position  */
-  bottom: 0;
-  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
-  filter: blur(10px);
- }
-
- .user-login-box{
-  position: relative;
-  margin-top: 50px;
-  text-align: center;
-  z-index: 1;
-}
-.user-login-box > *{
-  display: inline-block;
-  width: 200px;
-}
-
-.user-icon{
-  width: 100px;
-  height: 100px;
-  position: relative;
-  border-radius: 50%;
-  background-size: contain;
-  background-image: url(https://lh3.googleusercontent.com/ogw/ADGmqu9C1lwBjeKZ9uw4RfIxfTR0E37Fil98EvtxzTdHElQ=s83-c-mo);
-}
-
-.user-name{
-  margin-top: 15px;
-  margin-bottom: 15px;
-  color: white;
-}
-
-input.user-password{
-  width: 120px;
-  height: 18px;
-  opacity: 0.4;
-  border-radius: 2px;
-  padding: 5px 15px;
-  border: 0;
-}
-
 
 .btn_support {
   float: right;
   width: 153px;
   height: 56px;
 
-  background: #8257e6;
+  background: #a853a3ff;
   border-radius: 68px;
   text-align: center;
   color: #fff;
@@ -125,7 +60,7 @@ input.user-password{
   width: 320px;
   height: 56px;
 
-  background: #8257e6;
+  background: #a853a3ff;
   border-radius: 16px 16px 0px 0px;
 
   display: flex;
@@ -145,9 +80,9 @@ input.user-password{
 }
 
 .chat_support {
-  position: absolute;
+  position: relative;
   max-width: 330px;
-  right: 10px;
+  right: 5px;
   animation: up 1s;
 }
 
@@ -203,21 +138,25 @@ input.user-password{
   border-radius: 4px;
   line-height: 20px;
 }
-.atendimento{
-  background-color: #ffffff;
-}
 
 .text_support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #dddddd;
   border: 1px solid #cec9c9;
+  border-radius:0 0 0 12px;
   max-height: 500px;
   overflow-y: scroll;
   /* border-bottom: 0px; */
 }
-.text_title{
-  color: #fff;
-  font-size: 24px;
-  font-family: Roboto, sans-serif ;
-  margin-bottom: 12px;
+
+.text_support .text_help{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .admin {
@@ -259,7 +198,7 @@ input.user-password{
 }
 
 .text_help {
-  padding-top: 8px;
+margin-bottom: 8px;
 }
 
 .text_help textarea {
@@ -294,25 +233,74 @@ input[type="text"]:focus {
   outline: 1px solid #a8a8a8;
 }
 
+.image_center{
+  
+  width: 550px;
+  height: 700px;
+}
+
+.container_counteudo{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+.container_imagem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+
+}
+.container_chat{
+  display: flex;
+  max-height: 800px;
+  width: 500px;
+  height: 800px;
+}
+.container_img_chat{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around;
+  margin-bottom: 90px;
+}
+
 .btn_start_chat {
   width: 121px;
   height: 40px;
 
-  background: #8257e6;
+  background: #a853a3ff;
   border-radius: 4px;
-  color: #fff;
+  color: #a8a8a8;
   border: none;
   cursor: pointer;
 }
 
 .btn_start_chat:hover {
   opacity: 0.8;
+  color:#ffffff;
 }
 
 .btn_cancel {
-  border: 0;
   cursor: pointer;
   margin-right: 10px;
+  width: 121px;
+  height: 40px;
+
+  background: #a853a3ff; 
+  border-radius: 4px;
+  color: #a8a8a8;
+  border: none;
+}
+.btn_cancel:hover{
+  opacity: 0.8;
+  color: #ffffff;
 }
 
 .button {
@@ -431,4 +419,26 @@ input[type="text"]:focus {
 
 .btn_send:hover {
   opacity: 0.8;
+}
+
+.text-light{
+  align-items: flex-start;
+  justify-items: center;
+    color: #eee;
+    font-size: 36px;
+    font-family: Roboto, sans-serif ;
+}
+.text_subtitle{
+  color: #0f0f0f;
+  border-color: #fff;
+  border-width: 5px;
+    font-size: 24px;
+    font-family: Roboto, sans-serif ;
+}
+
+.text_description{
+  color: #fff;
+    font-size: 16px;
+    font-family: Roboto, sans-serif ;
+    margin-top: 8px;
 }
